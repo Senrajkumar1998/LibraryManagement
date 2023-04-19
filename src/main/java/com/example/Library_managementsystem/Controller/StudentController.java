@@ -2,6 +2,7 @@ package com.example.Library_managementsystem.Controller;
 
 import com.example.Library_managementsystem.DTO.RequestDto.StudentRequestDto;
 import com.example.Library_managementsystem.DTO.RequestDto.UpdateStudentMobileRequestDto;
+import com.example.Library_managementsystem.DTO.ResponseDto.StudentResponseDto;
 import com.example.Library_managementsystem.DTO.ResponseDto.UpdateStudentMobileResponseDto;
 import com.example.Library_managementsystem.Entity.Student;
 import com.example.Library_managementsystem.Exception.StudentNotFoundException;
@@ -30,7 +31,8 @@ public class StudentController {
 
     //Get student by id
     @GetMapping("/get_student")
-    public Student getStudent(@RequestParam("id") int id){
+    public StudentResponseDto getStudent(@RequestParam("id") int id){
+
         return studentService.getStudentById(id);
     }
 }
